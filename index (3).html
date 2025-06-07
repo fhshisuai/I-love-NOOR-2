@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>I LOVE NOOR - ❤️ Special Edition ❤️</title>
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Dancing+Script:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            overflow: hidden;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(135deg, #FFD1DC 0%, #B0E0E6 100%); /* Soft gradient background */
+            font-family: 'Pacifico', cursive; /* More romantic font */
+            position: relative;
+            cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"><path fill="%23FF69B4" d="M12 21.35l-1.89-1.72C3.65 15.65 0 12.45 0 8.5 0 5.42 2.42 3 5.5 3c1.74 0 3.41.81 4.5 2.11C10.09 3.81 11.76 3 13.5 3 16.58 3 19 5.42 19 8.5c0 3.95-3.65 7.15-10.11 11.13L12 21.35z"/></svg>') 10 10, auto; /* Custom heart cursor */
+        }
+
+        .container {
+            text-align: center;
+            z-index: 10;
+            animation: fadeIn 3s ease-out; /* Fade in effect for the text */
+        }
+
+        .love-text {
+            font-size: 6em; /* Even larger text */
+            color: #FFFFFF; /* White text for contrast */
+            text-shadow: 4px 4px 10px rgba(0, 0, 0, 0.4), 0 0 20px #FF69B4; /* Deeper shadow and glow */
+            animation: pulse 2s infinite alternate, glow 3s infinite alternate; /* Text pulse and glow effect */
+            letter-spacing: 2px; /* Add some letter spacing */
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.2); /* Slightly transparent background for text */
+            border-radius: 15px;
+            box-shadow: 0 0 30px rgba(255, 105, 180, 0.6); /* Pink glow around the text box */
+        }
+
+        .subtitle {
+            font-family: 'Dancing Script', cursive; /* A graceful font for the subtitle */
+            font-size: 2em;
+            color: #FF69B4; /* Hot pink */
+            margin-top: 15px;
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+            animation: slideInUp 2s ease-out forwards; /* Slide in effect for subtitle */
+            opacity: 0; /* Start invisible for animation */
+            animation-delay: 1s; /* Appear after main text fades in */
+        }
+
+        /* --- Keyframes for Animations --- */
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: scale(0.8); }
+            to { opacity: 1; transform: scale(1); }
+        }
+
+        @keyframes slideInUp {
+            from { opacity: 0; transform: translateY(50px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes pulse {
+            from { transform: scale(1); }
+            to { transform: scale(1.03); } /* Less aggressive pulse */
+        }
+
+        @keyframes glow {
+            0% { text-shadow: 4px 4px 10px rgba(0, 0, 0, 0.4), 0 0 20px #FF69B4; }
+            50% { text-shadow: 4px 4px 10px rgba(0, 0, 0, 0.5), 0 0 35px #FF1493; } /* Deeper pink glow */
+            100% { text-shadow: 4px 4px 10px rgba(0, 0, 0, 0.4), 0 0 20px #FF69B4; }
+        }
+
+        /* Heart animation */
+        .heart {
+            position: absolute;
+            font-size: 2.5em; /* Slightly larger hearts */
+            color: #FFC0CB; /* Light pink hearts for background */
+            animation: moveHeart 15s infinite; /* Slower animation for a gentler feel */
+            animation-timing-function: ease-in-out; /* Smoother animation */
+            opacity: 0; /* Start invisible */
+            pointer-events: none;
+            text-shadow: 1px 1px 5px rgba(0,0,0,0.1);
+        }
+
+        /* Custom properties for each heart for more varied movement */
+        .heart:nth-child(1) { top: 80%; left: 10%; --dx: 120; --dy: -120; --s: 0.7; --r: 30; animation-duration: 15s; animation-delay: 0s;}
+        .heart:nth-child(2) { top: 20%; left: 30%; --dx: 100; --dy: -80; --s: 1.0; --r: -20; animation-duration: 12s; animation-delay: 1s;}
+        .heart:nth-child(3) { top: 60%; left: 50%; --dx: 130; --dy: -90; --s: 0.9; --r: 45; animation-duration: 18s; animation-delay: 2s;}
+        .heart:nth-child(4) { top: 40%; left: 70%; --dx: 90; --dy: -110; --s: 1.1; --r: -10; animation-duration: 13s; animation-delay: 0.5s;}
+        .heart:nth-child(5) { top: 90%; left: 90%; --dx: 110; --dy: -70; --s: 0.8; --r: 60; animation-duration: 16s; animation-delay: 2.5s;}
+        .heart:nth-child(6) { top: 10%; left: 0%; --dx: 140; --dy: -100; --s: 1.2; --r: -30; animation-duration: 14s; animation-delay: 1.5s;}
+        .heart:nth-child(7) { top: 70%; left: 20%; --dx: 80; --dy: -130; --s: 0.95; --r: 25; animation-duration: 17s; animation-delay: 3s;}
+        .heart:nth-child(8) { top: 30%; left: 40%; --dx: 125; --dy: -75; --s: 0.85; --r: -5; animation-duration: 11s; animation-delay: 0.8s;}
+        .heart:nth-child(9) { top: 50%; left: 60%; --dx: 95; --dy: -105; --s: 1.05; --r: 50; animation-duration: 19s; animation-delay: 3.5s;}
+        .heart:nth-child(10) { top: 0%; left: 80%; --dx: 105; --dy: -95; --s: 0.75; --r: -40; animation-duration: 10s; animation-delay: 0.2s;}
+        .heart:nth-child(11) { top: 85%; left: 5%; --dx: 115; --dy: -85; --s: 1.15; --r: 15; animation-duration: 20s; animation-delay: 4s;}
+        .heart:nth-child(12) { top: 15%; left: 25%; --dx: 135; --dy: -115; --s: 0.65; --r: -25; animation-duration: 14.5s; animation-delay: 1.8s;}
+        .heart:nth-child(13) { top: 55%; left: 45%; --dx: 85; --dy: -90; --s: 1.25; --r: 35; animation-duration: 16.5s; animation-delay: 2.2s;}
+        .heart:nth-child(14) { top: 35%; left: 65%; --dx: 100; --dy: -100; --s: 0.7; --r: -55; animation-duration: 13.5s; animation-delay: 0.6s;}
+        .heart:nth-child(15) { top: 75%; left: 85%; --dx: 145; --dy: -80; --s: 0.9; --r: 10; animation-duration: 18.5s; animation-delay: 2.8s;}
+        .heart:nth-child(16) { top: 5%; left: 15%; --dx: 90; --dy: -110; --s: 0.8; --r: 20; animation-duration: 17s; animation-delay: 1.2s;}
+        .heart:nth-child(17) { top: 95%; left: 35%; --dx: 100; --dy: -90; --s: 1.0; --r: -15; animation-duration: 12s; animation-delay: 3.2s;}
+        .heart:nth-child(18) { top: 25%; left: 55%; --dx: 120; --dy: -100; --s: 0.75; --r: 40; animation-duration: 15.5s; animation-delay: 0.9s;}
+        .heart:nth-child(19) { top: 65%; left: 75%; --dx: 110; --dy: -80; --s: 1.1; --r: -22; animation-duration: 13s; animation-delay: 2.4s;}
+        .heart:nth-child(20) { top: 45%; left: 95%; --dx: 130; --dy: -120; --s: 0.95; --r: 5; animation-duration: 19.5s; animation-delay: 3.8s;}
+
+
+        @keyframes moveHeart {
+            0% {
+                transform: translate(0, 0) scale(var(--s, 1)) rotate(0deg);
+                opacity: 0;
+            }
+            15% {
+                opacity: 0.7; /* Hearts fade in slower */
+            }
+            85% {
+                opacity: 0.7;
+            }
+            100% {
+                transform: translate(calc(var(--dx) * 1vw), calc(var(--dy) * 1vh)) scale(var(--s, 1.2)) rotate(calc(var(--r) * 1deg));
+                opacity: 0;
+            }
+        }
+
+        .unmute-button {
+            position: fixed; /* Keep it in place */
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%); /* Center horizontally */
+            z-index: 100; /* Ensure it's on top */
+            background-color: rgba(255, 105, 180, 0.8); /* Hot pink with transparency */
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 25px;
+            cursor: pointer;
+            font-family: 'Arial', sans-serif;
+            font-size: 1.1em;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+
+        .unmute-button:hover {
+            background-color: #FF1493; /* Darker pink on hover */
+            transform: translateX(-50%) scale(1.05);
+        }
+    </style>
+</head>
+<body>
+    <audio id="background-music" src="no-one-noticed.mp3" autoplay loop muted preload="auto"></audio>
+
+    <div class="container">
+        <div class="love-text">I LOVE NOOR</div>
+        <div class="subtitle">...always and forever!</div>
+    </div>
+
+    <div class="heart" style="top: 80%; left: 10%;">❤️</div>
+    <div class="heart" style="top: 20%; left: 30%;">❤️</div>
+    <div class="heart" style="top: 60%; left: 50%;">❤️</div>
+    <div class="heart" style="top: 40%; left: 70%;">❤️</div>
+    <div class="heart" style="top: 90%; left: 90%;">❤️</div>
+    <div class="heart" style="top: 10%; left: 0%;">❤️</div>
+    <div class="heart" style="top: 70%; left: 20%;">❤️</div>
+    <div class="heart" style="top: 30%; left: 40%;">❤️</div>
+    <div class="heart" style="top: 50%; left: 60%;">❤️</div>
+    <div class="heart" style="top: 0%; left: 80%;">❤️</div>
+    <div class="heart" style="top: 85%; left: 5%;">❤️</div>
+    <div class="heart" style="top: 15%; left: 25%;">❤️</div>
+    <div class="heart" style="top: 55%; left: 45%;">❤️</div>
+    <div class="heart" style="top: 35%; left: 65%;">❤️</div>
+    <div class="heart" style="top: 75%; left: 85%;">❤️</div>
+    <div class="heart" style="top: 5%; left: 15%;">❤️</div>
+    <div class="heart" style="top: 95%; left: 35%;">❤️</div>
+    <div class="heart" style="top: 25%; left: 55%;">❤️</div>
+    <div class="heart" style="top: 65%; left: 75%;">❤️</div>
+    <div class="heart" style="top: 45%; left: 95%;">❤️</div>
+
+    <button id="unmuteBtn" class="unmute-button">
+        Click to Play Music (❤️)
+    </button>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', (event) => {
+            const music = document.getElementById('background-music');
+            const unmuteBtn = document.getElementById('unmuteBtn');
+
+            // Attempt to play the music. It will be muted by default due to 'muted' attribute.
+            // Browsers typically allow muted autoplay without user interaction.
+            music.play().catch(error => {
+                console.warn("Autoplay was prevented (likely by browser policy, but mute is set).", error);
+                // In some strict scenarios, even muted autoplay might be delayed.
+                // The button will still work.
+            });
+
+            unmuteBtn.addEventListener('click', () => {
+                if (music.muted) {
+                    music.muted = false;
+                    // Attempt to play if it wasn't already playing (e.g., if user paused it, or it was delayed)
+                    music.play();
+                    unmuteBtn.textContent = 'Music On (❤️)'; // Update button text
+                } else {
+                    music.muted = true;
+                    unmuteBtn.textContent = 'Click to Play Music (❤️)'; // Update button text
+                }
+            });
+
+            // Optional: Hide button if music is already playing and not muted (e.g., if browser allowed full autoplay)
+            // This is unlikely but good for robustness.
+            music.addEventListener('playing', () => {
+                if (!music.muted) {
+                    unmuteBtn.style.display = 'none';
+                }
+            });
+
+            // Optional: Show button if music is paused or ended (e.g., user clicked pause)
+            music.addEventListener('pause', () => {
+                unmuteBtn.style.display = 'block';
+                unmuteBtn.textContent = 'Click to Play Music (❤️)';
+            });
+            music.addEventListener('ended', () => {
+                unmuteBtn.style.display = 'block';
+                unmuteBtn.textContent = 'Click to Play Music (❤️)';
+            });
+        });
+    </script>
+
+</body>
+</html>
